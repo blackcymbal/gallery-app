@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Dimensions, Pressable, StyleSheet, Text } from "react-native";
 import FastImage from "react-native-fast-image";
 
 const screenWidth = Dimensions.get("window").width;
@@ -7,18 +7,38 @@ const screenWidth = Dimensions.get("window").width;
 const imageWidth = (screenWidth - 48) / 2;
 
 export class LazyAlbum extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: false,
+    };
+  }
+
   render() {
     const navigation = this.props.navigation;
     const { thumbnailImage, albumId, totalImages } = this.props.album;
 
-    const handlePress = () => {
+    const handlePress = () =>
       navigation.navigate("AlbumScreen", {
         albumId: albumId,
       });
+
+    const handleLongPress = () => {
+      console.log("long pressed");
+      this.props.bottomSheetRef.current?.snapToIndex(0);
     };
 
+    const handlePressIn = () => this.setState({ value: true });
+    const handlePressOut = () => this.setState({ value: false });
+
     return (
-      <TouchableOpacity style={styles.container} onPress={handlePress}>
+      <Pressable
+        style={[styles.container, { opacity: this.state.value ? 0.4 : 1 }]}
+        onPress={handlePress}
+        onLongPress={handleLongPress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+      >
         <FastImage
           style={styles.image}
           source={{
@@ -31,7 +51,7 @@ export class LazyAlbum extends PureComponent {
           {albumId === -1 ? "All Images" : `Album no ${albumId}`}
         </Text>
         <Text style={styles.subTitle}>Total images {totalImages}</Text>
-      </TouchableOpacity>
+      </Pressable>
     );
   }
 }

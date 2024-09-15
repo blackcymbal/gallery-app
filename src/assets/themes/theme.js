@@ -7,6 +7,7 @@ const theme = {
     font: '#505050',
     font2: '#414141',
     lightGreen: '#48BB78',
+    error: '#FF0000'
   },
 };
 
