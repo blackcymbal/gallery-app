@@ -43,6 +43,7 @@ export default function AlbumList({ albumsList }) {
           offset: (imageWidth + 44 + 12) * index,
           index,
         })}
+        ListHeaderComponent={<View style={styles.header} />}
         ListFooterComponent={<View style={styles.footer} />}
       />
     </View>
@@ -50,6 +51,7 @@ export default function AlbumList({ albumsList }) {
 }
 
 const styles = StyleSheet.create({
-    container: { alignItems: "center", marginTop: 16 }, 
+    container: { alignItems: "center" }, 
+    header: {height: 8},
     footer: { height: 100 }
 });

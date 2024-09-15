@@ -36,11 +36,15 @@ export default function ImageList({ images }) {
           offset: (imageWidth + 8) * index,
           index,
         })}
+        ListHeaderComponent={<View style={styles.header} />}
+        ListFooterComponent={<View style={styles.footer} />}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { paddingHorizontal: 12, marginTop: 16 },
+  container: { paddingHorizontal: 12 },
+  header: {height: 12},
+  footer: { height: 120 },
 });
