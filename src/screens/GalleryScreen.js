@@ -10,7 +10,7 @@ import { useFetchImagesQuery } from "../store/slices/imagesApiSlice";
 
 export default function GalleryScreen() {
   const [isLoading, setLoading] = useState(false);
-  const { data: images } = useFetchImagesQuery();
+  const { data: images, isLoading: isImageLoading } = useFetchImagesQuery();
 
   const albumsList = useSelector(allAlbums);
 
@@ -43,7 +43,7 @@ export default function GalleryScreen() {
     <View style={styles.container}>
       <AppBar title={"Albums"} />
 
-      {isLoading ? (
+      {isLoading || isImageLoading ? (
         <View style={{ flex: 1, justifyContent: "center" }}>
           <Loader />
         </View>

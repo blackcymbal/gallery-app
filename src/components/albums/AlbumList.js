@@ -13,14 +13,14 @@ export default function AlbumList({ albumsList }) {
 
   const firstItem = {
     albumId: -1,
-    thumbnailImage: images[0].thumbnailUrl,
+    thumbnailImage: images[0]?.thumbnailUrl,
     totalImages: images.length,
   };
 
   const combinedList = [firstItem, ...albumsList];
 
   const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
+    <View>
       <Suspense fallback={<Text>Loading...</Text>}>
         <LazyAlbum album={item} navigation={navigation} />
       </Suspense>
@@ -51,7 +51,7 @@ export default function AlbumList({ albumsList }) {
 }
 
 const styles = StyleSheet.create({
-    container: { alignItems: "center" }, 
-    header: {height: 8},
-    footer: { height: 100 }
+  container: { alignItems: "center" },
+  header: { height: 8 },
+  footer: { height: 100 },
 });
