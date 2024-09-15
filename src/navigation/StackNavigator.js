@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
+import AlbumScreen from "../screens/AlbumScreen";
 import GalleryScreen from "../screens/GalleryScreen";
 import ImageDetailsScreen from "../screens/ImageDetailsScreen";
 
@@ -12,6 +13,7 @@ function StackNavigator() {
       initialRouteName={"GalleryScreen"}
     >
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
+      <Stack.Screen name="AlbumScreen" component={AlbumScreen} />
       <Stack.Screen name="ImageDetails" component={ImageDetailsScreen} />
     </Stack.Navigator>
   );
