@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Dimensions, Pressable, StyleSheet, Text } from "react-native";
 import FastImage from "react-native-fast-image";
+import { selectAnAlbumToDelete } from "../../store/slices/albumsSlice";
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -15,6 +16,7 @@ export class LazyAlbum extends PureComponent {
   }
 
   render() {
+    const dispatch = this.props.dispatch;
     const navigation = this.props.navigation;
     const { thumbnailImage, albumId, totalImages } = this.props.album;
 
@@ -24,7 +26,7 @@ export class LazyAlbum extends PureComponent {
       });
 
     const handleLongPress = () => {
-      console.log("long pressed");
+      dispatch(selectAnAlbumToDelete(albumId));
       this.props.bottomSheetRef.current?.snapToIndex(0);
     };
 

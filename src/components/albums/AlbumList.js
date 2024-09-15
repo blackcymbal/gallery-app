@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { Suspense, useRef } from "react";
 import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
+import { useDispatch } from "react-redux";
 import { useFetchImagesQuery } from "../../store/slices/imagesApiSlice";
 import DeleteBottomSheet from "../common/DeleteBottomSheet";
 
@@ -10,6 +11,7 @@ const LazyAlbum = React.lazy(() => import("./LazyAlbum"));
 
 export default function AlbumList({ albumsList }) {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const { data: images } = useFetchImagesQuery();
   const bottomSheetRef = useRef(null);
 
@@ -28,6 +30,7 @@ export default function AlbumList({ albumsList }) {
           album={item}
           navigation={navigation}
           bottomSheetRef={bottomSheetRef}
+          dispatch={dispatch}
         />
       </Suspense>
     </View>

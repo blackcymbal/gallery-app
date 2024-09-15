@@ -18,7 +18,7 @@ export default function GalleryScreen() {
 
   useEffect(() => {
     setLoading(true);
-    if (images) {
+    if (albumsList.length === 0 && images) {
       const albums = images.reduce((acc, item) => {
         const album = acc.find((a) => a.albumId === item.albumId);
 
@@ -35,8 +35,8 @@ export default function GalleryScreen() {
       }, []);
 
       dispatch(createAlbums(albums));
-      setLoading(false);
     }
+    setLoading(false);
   }, [images, dispatch]);
 
   return (
