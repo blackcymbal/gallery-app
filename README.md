@@ -54,9 +54,7 @@ https://reactnative.dev/docs/environment-setup?platform=android
 - Alternatively you can delete an image from the image details screen by pressing on the three dots on the app bar.
 
 # Screenshots
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 42 45](https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a)
-
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 42 56](https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6)
+![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 42 45](https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a) ![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 42 56](https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6)
 
 ![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 43 48](https://github.com/user-attachments/assets/18dc1980-2101-47be-b645-adf275e74bc9)
 
