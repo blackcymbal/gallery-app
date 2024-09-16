@@ -63,8 +63,8 @@ https://reactnative.dev/docs/environment-setup?platform=android
 
 ![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 46](https://github.com/user-attachments/assets/d1b50529-6e09-46eb-b1ad-aebbc191911c)
 
-<div align="center">
-	<img width = "33%" src="https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a">
-  <img width = "33%" src="https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6">
-  <img width = "33%" src="https://github.com/user-attachments/assets/18dc1980-2101-47be-b645-adf275e74bc9">
+<div align="space-between">
+	<img width = "30%" src="https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a">
+  <img width = "30%" src="https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6">
+  <img width = "30%" src="https://github.com/user-attachments/assets/18dc1980-2101-47be-b645-adf275e74bc9">
 </div>
