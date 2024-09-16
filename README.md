@@ -47,6 +47,7 @@ https://reactnative.dev/docs/environment-setup?platform=android
 
 - [redux-persist](https://github.com/rt2zz/redux-persist) has been used to store images list data
 - [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image) has been used to store images for offline access
+- Search functionality is implemented based on image title
 - Albums are created depending on the album ids
 - All images album contains all the images in the app
 - Long press on a album to delete the album (except All images album)
