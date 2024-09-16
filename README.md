@@ -55,16 +55,14 @@ https://reactnative.dev/docs/environment-setup?platform=android
 
 # Screenshots
 
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 43 48](https://github.com/user-attachments/assets/18dc1980-2101-47be-b645-adf275e74bc9)
-
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 43 44](https://github.com/user-attachments/assets/17c6c8b2-94e7-4016-93a2-18034555eece)
-
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 42](https://github.com/user-attachments/assets/a9fbed92-3e76-4dcd-8992-f799eac50d1f)
-
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 46](https://github.com/user-attachments/assets/d1b50529-6e09-46eb-b1ad-aebbc191911c)
-
-<div align="space-between">
-	<img width = "30%" src="https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a">
-  <img width = "30%" src="https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6">
+<div align="center">
+	<img width = "30%" style="margin-right: 10px;"  src="https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a">
+  <img width = "30%" style="margin-right: 10px;"  src="https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6">
   <img width = "30%" src="https://github.com/user-attachments/assets/18dc1980-2101-47be-b645-adf275e74bc9">
+</div>
+
+<div align="center" style="margin-top: 40px;">
+	<img width = "30%" style="margin-right: 10px;"  src="https://github.com/user-attachments/assets/17c6c8b2-94e7-4016-93a2-18034555eece">
+  <img width = "30%" style="margin-right: 10px;"  src="https://github.com/user-attachments/assets/a9fbed92-3e76-4dcd-8992-f799eac50d1f">
+  <img width = "30%" src="https://github.com/user-attachments/assets/d1b50529-6e09-46eb-b1ad-aebbc191911c">
 </div>
