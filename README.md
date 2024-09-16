@@ -55,11 +55,20 @@ https://reactnative.dev/docs/environment-setup?platform=android
 
 # Screenshots
 ![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 42 45](https://github.com/user-attachments/assets/9662a77a-89af-46ad-844c-c55fbae5656a)
+
 ![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 42 56](https://github.com/user-attachments/assets/e34d5333-f3e1-471a-a8d8-f9fb3da684f6)
+
 ![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 43 48](https://github.com/user-attachments/assets/18dc1980-2101-47be-b645-adf275e74bc9)
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 43 44](https://github.com/user-attach![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 42](https://github.com/user-attachments/assets/de332e2a-db59-4313-a86d-8e7c95fcb3dc)
-ments/assets/949dc4d8-f660-4f35-9978-11c3068d4eab)
-![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 46](https://github.com/user-attachments/assets/2bfc65d7-93cd-4eb7-b1e5-3a88384e529f)
+
+![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 43 44](https://github.com/user-attachments/assets/17c6c8b2-94e7-4016-93a2-18034555eece)
+
+![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 42](https://github.com/user-attachments/assets/a9fbed92-3e76-4dcd-8992-f799eac50d1f)
+
+![Simulator Screen Shot - iPhone 14 Pro Max - 2024-09-16 at 12 44 46](https://github.com/user-attachments/assets/d1b50529-6e09-46eb-b1ad-aebbc191911c)
+
+
+
+
 
 
 
