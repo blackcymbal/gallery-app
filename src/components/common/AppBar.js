@@ -12,12 +12,18 @@ import LinearGradient from "react-native-linear-gradient";
 import Feather from "react-native-vector-icons/Feather";
 import theme from "../../assets/themes/theme";
 
-const AppBar = ({ title, isBackButton = false }) => {
+const AppBar = ({
+  title,
+  isBackButton = false,
+  isOptionsButton = false,
+  handlePressOptionsButton = () => {},
+}) => {
   const navigation = useNavigation();
 
   const handleGoBack = () => {
     navigation.goBack();
   };
+
   return (
     <LinearGradient colors={[theme.colors.secondary, theme.colors.primary]}>
       <SafeAreaView style={styles.container}>
@@ -35,7 +41,17 @@ const AppBar = ({ title, isBackButton = false }) => {
           )}
 
           <Text style={styles.title}>{title}</Text>
-          <View style={styles.emptyView} />
+          {isOptionsButton ? (
+            <TouchableOpacity onPress={handlePressOptionsButton}>
+              <Feather
+                name="more-horizontal"
+                size={30}
+                color={theme.colors.mintCream}
+              />
+            </TouchableOpacity>
+          ) : (
+            <View style={styles.emptyView} />
+          )}
         </View>
       </SafeAreaView>
     </LinearGradient>

@@ -2,15 +2,28 @@ import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useCallback } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import theme from "../../assets/themes/theme";
-import { albumToDelete, deleteAnAlbum } from "../../store/slices/albumsSlice";
+import {
+  deleteAnAlbum,
+  modifyAlbums,
+  photoToDelete,
+} from "../../store/slices/albumsSlice";
+import {
+  imagesApiSlice,
+  useFetchImagesQuery,
+} from "../../store/slices/imagesApiSlice";
 
 export default function DeleteBottomSheet({ bottomSheetRef, isImage = false }) {
-  const selectedAlbumId = useSelector(albumToDelete);
+  const selectedPhotoToDelete = useSelector(photoToDelete);
+  const { data: images } = useFetchImagesQuery();
+
   const dispatch = useDispatch();
+  const route = useRoute();
+  const navigation = useNavigation();
 
   const handleSheetChanges = useCallback((index) => {}, []);
 
@@ -29,6 +42,37 @@ export default function DeleteBottomSheet({ bottomSheetRef, isImage = false }) {
     []
   );
 
+  const handleDelete = () => {
+    if (isImage) {
+      const selectedImage = images.find(
+        (item) => item.id === selectedPhotoToDelete
+      );
+
+      dispatch(
+        imagesApiSlice.util.updateQueryData(
+          "fetchImages",
+          undefined,
+          (draft) => {
+            const index = draft.findIndex(
+              (photo) => photo.id === selectedPhotoToDelete
+            );
+            if (index !== -1) {
+              draft.splice(index, 1); // Remove the photo from the cache
+            }
+          }
+        )
+      );
+      dispatch(modifyAlbums(selectedImage?.albumId));
+
+      if (route.name === "ImageDetails") {
+        navigation.goBack();
+      }
+    } else {
+      dispatch(deleteAnAlbum());
+    }
+    bottomSheetRef.current?.close();
+  };
+
   return (
     <BottomSheet
       ref={bottomSheetRef}
@@ -40,13 +84,7 @@ export default function DeleteBottomSheet({ bottomSheetRef, isImage = false }) {
       backgroundStyle={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
     >
       <BottomSheetView style={styles.contentContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            dispatch(deleteAnAlbum());
-            bottomSheetRef.current?.close();
-          }}
-        >
+        <TouchableOpacity style={styles.button} onPress={handleDelete}>
           <Text
             style={{
               color: theme.colors.error,

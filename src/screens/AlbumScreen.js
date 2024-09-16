@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import theme from "../assets/themes/theme";
 import Loader from "../components/common/Loader";
@@ -9,12 +9,17 @@ import { useFetchImagesQuery } from "../store/slices/imagesApiSlice";
 export default function AlbumScreen({ route }) {
   const { data: images, isLoading } = useFetchImagesQuery();
 
+
   const albumId = route.params.albumId;
   const filteredImages = images?.filter((item) => item.albumId === albumId);
 
   const [allImages, setAllImages] = useState(
     albumId === -1 ? images : filteredImages
   );
+
+  useEffect(() => {
+    setAllImages(albumId === -1 ? images : filteredImages);
+  }, [images?.length, filteredImages?.length]);
 
   return (
     <View style={styles.container}>

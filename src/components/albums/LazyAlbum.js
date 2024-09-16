@@ -26,8 +26,12 @@ export class LazyAlbum extends PureComponent {
       });
 
     const handleLongPress = () => {
-      dispatch(selectAnAlbumToDelete(albumId));
-      this.props.bottomSheetRef.current?.snapToIndex(0);
+      if (albumId !== -1) {
+        dispatch(selectAnAlbumToDelete(albumId));
+        this.props.bottomSheetRef.current?.snapToIndex(0);
+      } else {
+        handlePress();
+      }
     };
 
     const handlePressIn = () => this.setState({ value: true });
@@ -73,3 +77,4 @@ const styles = StyleSheet.create({
 });
 
 export default LazyAlbum;
+

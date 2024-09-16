@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import theme from "../assets/themes/theme";
 import AlbumList from "../components/albums/AlbumList";
@@ -9,15 +9,13 @@ import { allAlbums, createAlbums } from "../store/slices/albumsSlice";
 import { useFetchImagesQuery } from "../store/slices/imagesApiSlice";
 
 export default function GalleryScreen() {
-  const [isLoading, setLoading] = useState(false);
-  const { data: images, isLoading: isImageLoading } = useFetchImagesQuery();
+  const { data: images, isLoading } = useFetchImagesQuery();
 
   const albumsList = useSelector(allAlbums);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setLoading(true);
     if (albumsList.length === 0 && images) {
       const albums = images.reduce((acc, item) => {
         const album = acc.find((a) => a.albumId === item.albumId);
@@ -36,19 +34,22 @@ export default function GalleryScreen() {
 
       dispatch(createAlbums(albums));
     }
-    setLoading(false);
   }, [images, dispatch]);
 
   return (
     <View style={styles.container}>
       <AppBar title={"Albums"} />
 
-      {isLoading || isImageLoading ? (
+      {isLoading ? (
         <View style={{ flex: 1, justifyContent: "center" }}>
           <Loader />
         </View>
+      ) : images ? (
+        <AlbumList albumsList={albumsList} images={images} />
       ) : (
-        <AlbumList albumsList={albumsList} />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <Text>Something went wrong!</Text>
+        </View>
       )}
     </View>
   );

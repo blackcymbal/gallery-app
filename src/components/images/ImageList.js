@@ -1,6 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { Suspense } from "react";
+import React, { Suspense, useRef } from "react";
 import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
+import { useDispatch } from "react-redux";
+import DeleteBottomSheet from "../common/DeleteBottomSheet";
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -10,11 +12,18 @@ const LazyImage = React.lazy(() => import("./LazyImage"));
 
 export default function ImageList({ images }) {
   const navigation = useNavigation();
+  const bottomSheetRef = useRef(null);
+  const dispatch = useDispatch();
 
   const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
+    <View>
       <Suspense fallback={<Text>Loading...</Text>}>
-        <LazyImage image={item} navigation={navigation} />
+        <LazyImage
+          image={item}
+          navigation={navigation}
+          bottomSheetRef={bottomSheetRef}
+          dispatch={dispatch}
+        />
       </Suspense>
     </View>
   );
@@ -39,12 +48,13 @@ export default function ImageList({ images }) {
         ListHeaderComponent={<View style={styles.header} />}
         ListFooterComponent={<View style={styles.footer} />}
       />
+      <DeleteBottomSheet bottomSheetRef={bottomSheetRef} isImage={true} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: { paddingHorizontal: 12 },
-  header: {height: 12},
+  header: { height: 12 },
   footer: { height: 120 },
 });
