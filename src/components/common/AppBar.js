@@ -24,6 +24,8 @@ const AppBar = ({
     navigation.goBack();
   };
 
+  // This is a comment
+
   return (
     <LinearGradient colors={[theme.colors.secondary, theme.colors.primary]}>
       <SafeAreaView style={styles.container}>
